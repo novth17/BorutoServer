@@ -18,5 +18,5 @@ interface HeroRepository {
 
     //suspend: a function that can pause without blocking the thread.
     suspend fun getAllHeroes(page: Int = 1): ApiResponse
-    suspend fun searchHeroes(name: String): ApiResponse
+    suspend fun searchHeroes(name: String?): ApiResponse
 }
