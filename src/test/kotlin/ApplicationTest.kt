@@ -10,9 +10,7 @@ import io.ktor.client.statement.*
 import io.ktor.http.*
 import io.ktor.server.testing.*
 import kotlinx.serialization.ExperimentalSerializationApi
-import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
-import org.koin.dsl.module
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
