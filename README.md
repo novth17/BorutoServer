@@ -1,16 +1,19 @@
-# BorutoServer
+# BorutoServer 🥷
 
-This project was created using the [Ktor Project Generator](https://start.ktor.io).
+A lightweight Ktor backend server built with Kotlin, featuring a simple hero API inspired by the Boruto universe.
 
-Here are some useful links to get you started:
+This project is designed to demonstrate clean backend architecture, including routing, repositories, serialization, and plugin configuration.
 
-- [Ktor Documentation](https://ktor.io/docs/home.html)
-- [Ktor GitHub page](https://github.com/ktorio/ktor)
-- The [Ktor Slack chat](https://app.slack.com/client/T09229ZC6/C0A974TJ9). You'll need to [request an invite](https://surveys.jetbrains.com/s3/kotlin-slack-sign-up) to join.
-
-## Features
-
-Here's a list of features included in this project:
+## 🚀 Features
+- Hero data model with a repository layer
+- Endpoints for
+  - Fetching all heroes
+  - Searching heroes by name
+  - Root endpoint for basic health/info
+- Structured routing with Ktor DSL
+- Clean logging and error handling via status pages
+  
+## 🔌 Plugins
 
 | Name                                                                   | Description                                                                        |
 | ------------------------------------------------------------------------|------------------------------------------------------------------------------------ |
@@ -19,7 +22,7 @@ Here's a list of features included in this project:
 | [kotlinx.serialization](https://start.ktor.io/p/kotlinx-serialization) | Handles JSON serialization using kotlinx.serialization library                     |
 | [Call Logging](https://start.ktor.io/p/call-logging)                   | Logs client requests                                                               |
 
-## Building & Running
+## 🛠️ Building & Running
 
 To build or run the project, use one of the following tasks:
 
@@ -27,11 +30,7 @@ To build or run the project, use one of the following tasks:
 | -----------------------------------------|---------------------------------------------------------------------- |
 | `./gradlew test`                        | Run the tests                                                        |
 | `./gradlew build`                       | Build everything                                                     |
-| `./gradlew buildFatJar`                 | Build an executable JAR of the server with all dependencies included |
-| `./gradlew buildImage`                  | Build the docker image to use with the fat JAR                       |
-| `./gradlew publishImageToLocalRegistry` | Publish the docker image locally                                     |
 | `./gradlew run`                         | Run the server                                                       |
-| `./gradlew runDocker`                   | Run using the local docker image                                     |
 
 If the server starts successfully, you'll see the following output:
 
@@ -40,3 +39,31 @@ If the server starts successfully, you'll see the following output:
 2024-12-04 14:32:45.682 [main] INFO  Application - Responding at http://0.0.0.0:8080
 ```
 
+## 📡 Endpoints
+
+| Endpoint                | Method | Description                |
+| ------------------      | ------ | -------------------------- |
+| `/`                     | GET    | Root endpoint, server info |
+| `/heroes`               | GET    | Get all heroes             |
+| `/heroes?name=heroName` | GET    | Search heroes by name      |
+
+## 🧱 Project Structure
+```
+BorutoServer/
+├─ src/
+│  ├─ main/
+│  │  ├─ kotlin/
+│  │  │  └─ com/
+│  │  │     └─ personalproject/
+│  │  │        ├─ di/            # Dependency injection
+│  │  │        ├─ models/        # Data models (Hero, etc.)
+│  │  │        ├─ plugins/       # Installed Ktor plugins (routing, serialization...)
+│  │  │        ├─ repository/    # Data source / business logic
+│  │  │        ├─ routes/        # API endpoints
+│  │  │        └─ Application.kt # Main application entry point
+│  │  └─ resources/          
+│  └─ test/                  
+├─ .gitignore
+```
+## 🕹️ Example fetch
+<img width="1784" height="763" alt="image" src="https://github.com/user-attachments/assets/bba5bfd4-6f8b-41c4-92a4-5b3d0c3908a0" />
