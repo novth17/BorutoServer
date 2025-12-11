@@ -2,7 +2,7 @@
 
 A lightweight Ktor backend server built with Kotlin, featuring a simple hero API inspired by the Boruto universe.
 
-This project is designed to demonstrate clean backend architecture, including routing, repositories, serialization, and plugin configuration.
+This project is designed to get to know Ktor framework, demonstrate clean backend architecture, including routing, repositories, serialization, and plugin configuration.
 
 ## 🚀 Features
 - Hero data model with a repository layer
